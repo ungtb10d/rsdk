@@ -234,6 +234,7 @@ export interface ISendCryptoEvent extends IWidgetEvent {
   eventVersion: typeof SEND_CRYPTO_SUPPORTED_VERSION;
   type: InternalEventTypes.SEND_CRYPTO;
   payload: {
+    assetChain: string;
     assetSymbol: string;
     amount: string;
     address: string;
@@ -335,6 +336,7 @@ export type TOnRequestCryptoAccountCallback = (
 ) => Promise<IOnRequestCryptoAccountResult>;
 
 export type TOnSendCryptoCallback = (
+  assetChain: string,
   assetSymbol: string,
   amount: string,
   address: string

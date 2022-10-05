@@ -368,6 +368,7 @@ export class RampInstantSDK {
     }
     try {
       result = await this._onSendCryptoCallback?.(
+        event.payload.assetChain,
         event.payload.assetSymbol,
         event.payload.amount,
         event.payload.address
